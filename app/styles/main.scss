@@ -1,31 +1,121 @@
-// bower:scss
-// endbower
+@import "var";
 
 body {
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0 20px;
+  line-height: 1.2em;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+/* Navigation */
+nav {
+  height: 50px;
+  background-color: #222;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-radius: 5px;
+  div {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    &.active {
+      background-color: black;
+    }
+    a {
+      text-decoration: none;
+      color: $default-text-color;
+    }
+    a:hover {
+      color: white;
+    }
+    &.active {
+      background-color: black;
+    }
   }
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+#sound-box {
+  margin-top: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  text-align: center;
+  padding: 40px;
+
+  header {
+    font-size: 30pt;
+    font-weight: bold;
+  }
+}
+
+#tag-list {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .tag {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 0 1 auto;
+    padding: 10px;
+    position: relative;
+    margin: 10px 0;
+    box-sizing: border-box;
+
+    p {
+      margin-top: 5px;
+    }
+
+    .title {
+      font-size: 1.5em;
+    }
+  }
+
+  .tag-img {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  body {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    margin: 0 auto;
+    width: 780px;
+  }
+  #tag-list {
+    .tag {
+      width: 370px;
+      margin: 10px 10px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    margin: 0 20px;
+  }
+  nav {
+    div {
+      display: none;
+      &.nav-header {
+        display: flex;
+      }
+    }
+  }
 }
