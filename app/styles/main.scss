@@ -39,6 +39,10 @@ nav {
   }
 }
 
+h1 {
+  font-size: 40px;
+}
+
 #sound-box {
   margin-top: 10px;
   background-color: #eee;
@@ -47,8 +51,8 @@ nav {
   padding: 40px;
 
   header {
-    font-size: 30pt;
     font-weight: bold;
+    margin: 10px 0;
   }
 }
 
@@ -60,22 +64,23 @@ nav {
   justify-content: flex-start;
 
   .tag {
-    width: 100%;
-    height: 100px;
+    width: 370px;
+    margin: 10px 10px;
+    height: 200px;
     border: 1px solid #ddd;
     border-radius: 5px;
     flex: 0 1 auto;
     padding: 10px;
     position: relative;
-    margin: 10px 0;
     box-sizing: border-box;
 
     p {
-      margin-top: 5px;
+      margin: 10px 0;
     }
 
     .title {
       font-size: 1.5em;
+      line-height: 50px;
     }
   }
 
@@ -87,22 +92,17 @@ nav {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   body {
+    width: 1170px;
     margin: 0 auto;
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px) and (max-width: 1200px) {
   body {
     margin: 0 auto;
     width: 780px;
-  }
-  #tag-list {
-    .tag {
-      width: 370px;
-      margin: 10px 10px;
-    }
   }
 }
 
@@ -110,6 +110,14 @@ nav {
   body {
     margin: 0 20px;
   }
+
+  #tag-list {
+    .tag {
+      width: 100%;
+      margin: 10px 0px;
+    }
+  }
+
   nav {
     div {
       display: none;
